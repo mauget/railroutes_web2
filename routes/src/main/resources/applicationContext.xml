@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean id="dbWrapper" class="com.ramblerag.db.core.DbWrapper">
+		<property name="graphDatabaseFactory" ref="graphDatabaseFactory"></property>
+	</bean>
+
+	<bean id="router" class="com.ramblerag.db.route.RouterService">
+		<property name="dbWrapper" ref="dbWrapper"></property>
+	</bean>
+
+	<bean id="graphDatabaseFactory" class="org.neo4j.graphdb.factory.GraphDatabaseFactory">
+	</bean>
+	
+</beans>

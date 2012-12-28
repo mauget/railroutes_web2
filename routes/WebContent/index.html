@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport"
+            content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" /> 
+    
+    
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0-rc.2/jquery.mobile-1.2.0-rc.2.min.css" />
+	<script src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0-rc.2/jquery.mobile-1.2.0-rc.2.min.js"></script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDKvM_lcW2Bz-mflaUe8CSjgCNlBdeTyM&sensor=true"></script>
+    
+    <link rel="stylesheet" type="text/css" href="style/app.css">
+    <script src="scripts/app.js"></script>
+  </head>
+  <body>
+	<div data-role="page" data-theme="c"> 
+		<div data-role="header" style="padding-left:1em;">
+		  	<div data-role="controlgroup" data-type="horizontal" data-theme="d">
+				<a href="#popupAbout" data-role="button" data-theme="b" data-rel="popup">About</a>
+				<a href="" data-role="button" data-theme="b" id="buttonReset">Reset</a>
+				<a href="" data-role="button" data-theme="d" id="buttonRoute">Route It</a>
+			</div>
+			<div data-role="fieldcontain">
+	   			<label for="fromSlider">Station A: </label>
+				<input type="range" style="width:5em" name="fromSlider" id="fromId" value="9999" min="1" max="133752" data-theme="d" data-highlight="true" data-mini="false"/>
+			</div>
+			<div data-role="fieldcontain">
+	   			<label for="toSlider">Station B: </label>
+				<input type="range" style="width:5em" name="toSlider" id="toId" value="9967" min="1" max="133752" data-theme="d" data-highlight="true" data-mini="false" />
+			</div>
+		</div><!-- /header -->
+		
+    	<div data-role="content">
+    		<div id="map_canvas" class="ui_page" style="min-height:200px;"></div>
+    	
+	    	<div data-role="popup" id="popupAbout" class="ui-content">
+			<p>A demo using a Neo4j graph DBMS to find a shortest route through a network of Bizarro-World 
+			rail stations. A station ID is an integer taken from the range {1..133752}. That's bizarre.<p>
+		</div>
+    	
+    	</div><!-- /content -->
+    	
+    	<div data-role="footer">
+			<p style="padding-left:1em;">Rail Route Demo</p>
+-     	</div><!-- /footer -->
+    </div>
+    
+	
+  </body>
+
+</html>
