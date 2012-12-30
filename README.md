@@ -18,10 +18,10 @@ controller URL as a parameter, thus obtaining the KML for the route layer.
 
 ## Try It Live 
 
-We deploy to a Heroku application, myjavane4j. The application is the lowest-scale "dyno", meaning that it "spins down" after a period of
-disuse. The dyno may take 30 seconds to restart, and another 30 seconds for our application to insert its *Neo4j* database to Heroku
-ephemeral storage. After that, each request is fairly instantaneous -- until an hour or so of disuse. That's a low price to play in a
-sandbox. So ... try it:
+We deploy to a *Heroku* application, myjavane4j. The application is the lowest-scale *dyno*, meaning that it "spins down" after a period of
+disuse. The *dyno* may take 30 seconds to restart, and another 30 seconds for our application to insert its *Neo4j* database to *Heroku
+ephemeral storage*. After that, each request is fairly instantaneous -- until an hour or so of disuse. That's a low price to play in a
+sandbox. Try the application:
 
 [http://myjavaneo4j.herokuapp.com/](http://myjavaneo4j.herokuapp.com/ "Live site on Heroku")
 
@@ -33,19 +33,22 @@ runtime for Apache Tomcat 7.29 in Eclipse.
 
 To publish a derivative of this application on your own site, you would need your own Google API key to programmatically supply a KML layer to Google Maps. It's located in the *index.html* file, the
 only html file. The map API requires that your KML be publicly available on the web. Our development order was:
+
 1. Test the shortest path logic with JUnit
 2. Write a controller that used that logic to return a stream of KML. Test the controller by dropping its URL into Google Maps' search field in a browser.
 3. Publish a web application containing the controller to a publicly visible site (we first opened an HTTP port on our router for this)
 4. Only then did we flesh out the view logic.
 
-Note that if you test locally, your logic must always refer to a publicly available KML source. We eventually deployed our WAR to a public
-Heroku application, as we refined the browser-side "logic." Our single HTML page always referred to our Heroku version of the application
-developed in steps 1 - 3.
+Note that if you test locally, your logic must always refer to a publicly available KML source. We eventually deployed our WAR to a
+public *Heroku* application, as we refined the browser-side "logic." Our single HTML page always referred to our *Heroku* version of the
+application developed in steps 1 - 3.
 
 ## To Deploy Your Own Site
 You'll need to change two points in the index.html. 
-1. The Google API key
-2. The KML controller URL
+
+1. The Google API key.
+2. The KML controller URL.
+
 Changing these two dependency values to integrate via a Mustache or Handlebars template would be a good TODO for us.
 
 + A route displays as a blue line -- Google Earth zooms to accommodate.
