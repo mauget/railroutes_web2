@@ -1,8 +1,9 @@
 
+// To cloners: change APP.urlStem to your public URL
+
     var APP = APP || {};
 
     APP.urlStem = 'http://myjavaneo4j.herokuapp.com';
-    //APP.urlStem = 'http://localhost:8080/routes';
 	
 	APP.drawMap = function() {
     	
