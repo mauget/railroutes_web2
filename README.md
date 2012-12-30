@@ -45,7 +45,7 @@ application developed in steps 1 - 3.
 
 ## The Database
 
-See **github project [https://github.com/mauget/railroutes_cmd](https://github.com/mauget/railroutes_cmd) for creating the database and
+See *github* project [https://github.com/mauget/railroutes_cmd](https://github.com/mauget/railroutes_cmd) for creating the database and
 for an command-invoked version of this application that displays in Google Earth.
 
 ## To Deploy Your Own Site
