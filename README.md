@@ -16,7 +16,13 @@ the shortest path between the two stations. The controller is independently addr
 station slider values. Then it uses a Google API to insert a KML layer into a Google Map of the USA. The insertion API takes our
 controller URL as a parameter, thus obtaining the KML for the route layer.
 
-## Try It Live
+## Try It Live 
+
+We deploy to a Heroku application, myjavane4j. The application is the lowest-scale "dyno", meaning that it "spins down" after a period of
+disuse. The dyno may take 30 seconds to restart, and another 30 seconds for our application to insert its *Neo4j* database to Heroku
+ephemeral storage. After that, each request is fairly instantaneous -- until an hour or so of disuse. That's a low price to play in a
+sandbox. So ... try it:
+
 [http://myjavaneo4j.herokuapp.com/](http://myjavaneo4j.herokuapp.com/ "Live site on Heroku")
 
 ## Workspace
