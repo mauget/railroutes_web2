@@ -16,6 +16,9 @@ the shortest path between the two stations. The controller is independently addr
 station slider values. Then it uses a Google API to insert a KML layer into a Google Map of the USA. The insertion API takes our
 controller URL as a parameter, thus obtaining the KML for the route layer.
 
+## Try It Live
+[http://myjavaneo4j.herokuapp.com/](http://myjavaneo4j.herokuapp.com/ "Live site on Heroku")
+
 ## Workspace
 
 Clone this repository to your file system. We used Eclipse 3.7 Juno. The directory tree is suitable to import into Eclipse as a Maven
