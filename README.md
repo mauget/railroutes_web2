@@ -49,12 +49,13 @@ See *github* project [https://github.com/mauget/railroutes_cmd](https://github.c
 for an command-invoked version of this application that displays in Google Earth.
 
 ## To Deploy Your Own Site
-You'll need to change two points in the `scripts/app.js` file. 
 
-1. The Google API key.
-2. The KML controller URL.
+You'll need to change two values. 
 
-Changing these two dependency values to integrate via a Mustache or Handlebars template would be a good TODO for us.
+1. The Google API key in the `index.html`file.
+2. The `APP.urlStem` value of your public deployed controller URL in the `scripts/app.js` file.
+
+Changing these two dependency values to integrate via a Mustache or Handlebars template would be a good TODO.
 
 + A route displays as a blue line -- Google Earth zooms to accommodate.
 + An example from an iPHone 4 follows.
