@@ -60,14 +60,11 @@ public class RouterService {
 			throws ApplicationException {
 		
 		log.info(String.format("Finding least-expensive route from node %d to node %d", keyValueA, keyValueB));
-		
 		GraphDatabaseService graphDb = getDbWrapper().getDbRef();
 
 		Index<Node> nodeIndex = graphDb.index().forNodes(DomainConstants.INDEX_NAME);
-
 		Node nodeA = nodeIndex.get(DomainConstants.PROP_NODE_ID, keyValueA)
 				.getSingle();
-		
 		Node nodeB = nodeIndex.get(DomainConstants.PROP_NODE_ID, keyValueB)
 				.getSingle();
 
@@ -93,8 +90,6 @@ public class RouterService {
 		} finally {
 			tx.finish();
 		}
-
-		//getDbWrapper().shutdownDb();
 	}
 
 	private void emitCoordinate(PrintStream printSteam, PathFinder<WeightedPath> shortestPath, Node nodeA, Node nodeB) {
