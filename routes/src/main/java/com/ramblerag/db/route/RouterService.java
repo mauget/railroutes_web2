@@ -81,9 +81,7 @@ public class RouterService {
 			PathFinder<WeightedPath> shortestPath = GraphAlgoFactory.aStar(relExpander,
 					costEval, estimateEval);
 
-			ps.println(KMLConstants.KML_LINE_START);
-			emitCoordinate(ps, shortestPath, nodeA, nodeB);
-			ps.println(KMLConstants.KML_LINE_END);
+			emitCoordinates(ps, shortestPath, nodeA, nodeB);
 			
 			tx.success();
 			
@@ -92,11 +90,12 @@ public class RouterService {
 		}
 	}
 
-	private void emitCoordinate(PrintStream printSteam, PathFinder<WeightedPath> shortestPath, Node nodeA, Node nodeB) {
+	private void emitCoordinates(PrintStream printSteam, PathFinder<WeightedPath> shortestPath, Node nodeA, Node nodeB) {
 
 		WeightedPath path = shortestPath.findSinglePath(nodeA, nodeB);
 		
 		if (null != path){
+			printSteam.println(KMLConstants.KML_LINE_START);
 			for (Node node : path.nodes()) {
 				
 				double lat = (Double) node.getProperty(DomainConstants.PROP_LATITUDE);
@@ -104,7 +103,10 @@ public class RouterService {
 				
 				printSteam.println(String.format("%f,%f,2300", lon, lat));
 			}
-			log.info(String.format("Emitted route having shortest path coordinates"));
+			log.info(String.format("Emitted route having shortest path coordinates (%d...%d)", nodeA.getId(), nodeB.getId()));
+			printSteam.println(KMLConstants.KML_LINE_END);
+		} else {
+			log.info(String.format("No route found between coordinates (%d...%d)", nodeA.getId(), nodeB.getId()));
 		}
 	}
 
