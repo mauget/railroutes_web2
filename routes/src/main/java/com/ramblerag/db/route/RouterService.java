@@ -49,8 +49,7 @@ public class RouterService {
 
 	public void findShortestPath(PrintStream ps, long startNode, long endNode) {
 		try {
-			RouterService router = Initializer.getApplicationContext().getBean(RouterService.class);
-			router.emitShortestPathKML(ps, startNode, endNode);
+			emitShortestPathKML(ps, startNode, endNode);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
