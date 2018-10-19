@@ -21,7 +21,6 @@ import org.neo4j.kernel.Traversal;
 import com.ramblerag.db.core.ApplicationException;
 import com.ramblerag.db.core.DbWrapper;
 import com.ramblerag.domain.DomainConstants;
-import com.ramblerag.servlet.Initializer;
 
 /**
  * Dump route to KML, suitable for feeding to Google Maps
